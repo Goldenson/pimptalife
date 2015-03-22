@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pimptalife</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body class="blue-grey lighten-5">
+
+<%= render partial: 'layouts/header' %>
+
+<div class="container">
+	<% if notice %><div class="card-panel green center-align"><%= notice %></div><% end %>
+	<% if alert %><div class="card-panel red center-align"><%= alert %></div><% end %>
+</div>
+
+<%= yield %>
+
+<%= render partial: 'layouts/footer' %>
+
+</body>
+</html>
