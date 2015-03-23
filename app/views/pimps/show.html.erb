@@ -8,9 +8,12 @@
 			<p>
 			  <%= image_tag(attachment_url(@pimp, :image, :fill, 500, 500), class: 'responsive-img') %>
 			</p>
-
-			<%= link_to 'Edit', edit_pimp_path(@pimp) %> |
-			<%= link_to 'Back', pimps_path %>		
+            <% if current_user == @pimp.user %>
+				<%= link_to 'Edit', edit_pimp_path(@pimp) %> |
+				<%= link_to 'Back', pimps_path %>
+			<% else %>
+				<%= link_to 'Back', pimps_path %>
+			<% end %>	
 		</div>
 	</div>
 </div>

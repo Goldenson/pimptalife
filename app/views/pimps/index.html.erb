@@ -1,28 +1,41 @@
 <div class="container">
-  <h1>Listing Pimps</h1>
-  <p><%= link_to new_pimp_path, class: 'btn-floating btn-large waves-effect waves-light red right' do %>
-    <i class="mdi-content-add"></i>
-  <% end %></p>
-  <table class="responsive-table">
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>User</th>
-        <th>Name</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <div class="row">
+    <div class="col s12">
+      <h1>Listing Pimps</h1>
+      <p><%= link_to new_pimp_path, class: 'btn-floating btn-large waves-effect waves-light red right' do %>
+            <i class="mdi-content-add"></i>
+          <% end %>
+      </p>
+      <table id="responsive-table">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>User</th>
+            <th>Name</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-    <tbody>
-      <% @pimps.each do |pimp| %>
-        <tr>
-          <td><%= image_tag attachment_url(pimp, :image, :fill, 100, 100) %></td>
-          <td><%= pimp.user.name %></td>
-          <td><%= pimp.name %></td>
-          <td><%= link_to 'Edit', edit_pimp_path(pimp) %></td>
-          <td><%= link_to 'Destroy', pimp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <tbody>
+          <% @pimps.each do |pimp| %>
+            <tr>
+              <% if current_user == pimp.user %>
+                <td><%= image_tag(attachment_url(pimp, :image, :fill, 500, 500), class: 'responsive-img materialboxed', size: '150') %></td>
+                <td><%= pimp.user.name %></td>
+                <td><%= pimp.name %></td>
+                <td><%= link_to 'Edit', edit_pimp_path(pimp) %></td>
+                <td><%= link_to 'Destroy', pimp, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+</script>

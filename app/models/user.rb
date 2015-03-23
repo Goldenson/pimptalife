@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
-  has_many :pimps
+  has_many :pimps, dependent: :destroy
 
 end
