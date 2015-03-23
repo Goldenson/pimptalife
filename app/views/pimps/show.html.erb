@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container center-align">
+	<div class="row">
+		<div class="col s12">
+			<p>
+			  <strong><%= @pimp.name %></strong>
+			</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @pimp.user.name %>
-</p>
+			<p>
+			  <%= image_tag(attachment_url(@pimp, :image, :fill, 500, 500), class: 'responsive-img') %>
+			</p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pimp.name %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag attachment_url(@pimp, :image, :fill, 100, 100) %>
-</p>
-
-<%= link_to 'Edit', edit_pimp_path(@pimp) %> |
-<%= link_to 'Back', pimps_path %>
+			<%= link_to 'Edit', edit_pimp_path(@pimp) %> |
+			<%= link_to 'Back', pimps_path %>		
+		</div>
+	</div>
+</div>

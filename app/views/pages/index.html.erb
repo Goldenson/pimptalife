@@ -7,7 +7,11 @@
       <div class="col s12">
         <div class="card-panel z-depth-2 m-t-40">
           <span class="flow-text">
-            <p>Share your Pimps with everyone. <a class="waves-effect waves-teal btn-flat right">Let's go <i class="mdi-content-send right"></i></a></p>
+            <p>Share your Pimps with everyone !
+              <%= link_to new_pimp_path, class: 'waves-effect waves-teal btn-flat right' do %>
+                Let's go <i class="mdi-content-send right"></i>
+              <% end %>
+            </p>
           </span>
         </div>
       </div>
@@ -18,7 +22,9 @@
           <div class="col s12 m6 l4">
             <div class="card z-depth-4">
               <div class="card-image waves-effect waves-block waves-light">
-                <%= image_tag attachment_url(pimp, :image, :fill, 300, 200) %>
+                <%= link_to pimp do %>
+                  <%= image_tag attachment_url(pimp, :image, :fill, 300, 200) %>
+                <% end %>
               </div>
               <div class="card-content">
                 <span class="card-title grey-text text-darken-4"><%= pimp.name %></span>

@@ -29,7 +29,7 @@ class PimpsController < ApplicationController
 
     respond_to do |format|
       if @pimp.save
-        format.html { redirect_to @pimp, notice: 'Pimp was successfully created.' }
+        format.html { redirect_to pimps_url, notice: 'Pimp was successfully created.' }
         format.json { render :show, status: :created, location: @pimp }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class PimpsController < ApplicationController
   def update
     respond_to do |format|
       if @pimp.update(pimp_params)
-        format.html { redirect_to @pimp, notice: 'Pimp was successfully updated.' }
+        format.html { redirect_to pimps_url, notice: 'Pimp was successfully updated.' }
         format.json { render :show, status: :ok, location: @pimp }
       else
         format.html { render :edit }

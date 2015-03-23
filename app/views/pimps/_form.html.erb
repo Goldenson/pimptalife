@@ -10,20 +10,32 @@
       </ul>
     </div>
   <% end %>
-
-<!--   <div class="field">
-    <%= f.label :user %><br>
-    <%= f.text_field :user %>
-  </div> -->
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="row">
+    <div class="input-field col s12 m6 offset-m3">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.attachment_field :image %>
+  <div class="row">
+    <div class="input-field col s12 m6 offset-m3">
+      <%= f.label :image %>
+      <%= f.attachment_field :image %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="row">
+  <!-- <div class="field"> -->
+    <div class="input-field col s12 m6 offset-m3">
+      <%= f.button "Pimp", class: "waves-effect waves-light btn col s12", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Pimping..."} %>
+    </div>
   </div>
 <% end %>
+
+<!--  Not working yet <form action="#">
+    <div class="file-field input-field">
+      <input class="file-path validate" type="text"/>
+      <div class="btn">
+        <span>File</span>
+        <input type="file" />
+      </div>
+    </div>
+  </form> -->
