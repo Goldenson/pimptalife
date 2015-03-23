@@ -34,6 +34,8 @@ gem 'devise', '~> 3.4.1'
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 
+gem 'local_time'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
