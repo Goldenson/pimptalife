@@ -1,0 +1,29 @@
+<%= form_for(@pimp) do |f| %>
+  <% if @pimp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pimp.errors.count, "error") %> prohibited this pimp from being saved:</h2>
+
+      <ul>
+      <% @pimp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<!--   <div class="field">
+    <%= f.label :user %><br>
+    <%= f.text_field :user %>
+  </div> -->
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.attachment_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

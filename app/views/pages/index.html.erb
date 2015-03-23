@@ -14,19 +14,21 @@
       <div class="col s12">
         <h1 class="center-align"><b>Latest Pimps updated</b></h1>
         <div class="row">
+          <% @pimps.each do |pimp| %>
           <div class="col s12 m6 l4">
             <div class="card z-depth-4">
               <div class="card-image waves-effect waves-block waves-light">
-                <%= image_tag('life.jpg') %>
+                <%= image_tag attachment_url(pimp, :image, :fill, 300, 200) %>
               </div>
               <div class="card-content">
-                <span class="card-title grey-text text-darken-4">Title</span>
-                <span class="card-title grey-text text-darken-4"><i class="fa fa-heart-o right"> 3</i></span>
-                <p><i class="mdi-image-timer-auto"></i>User</p>
-                <p><small><i class="mdi-device-access-time m-r-10"></i>Date<i class="small mdi-content-clear right"></i></small></p>
+                <span class="card-title grey-text text-darken-4"><%= pimp.name %></span>
+                <!-- <span class="card-title grey-text text-darken-4"><i class="fa fa-heart-o right"> 3</i></span> -->
+                <p><i class="mdi-image-timer-auto"></i><%= pimp.user.name %></p>
+                <p><small><i class="mdi-device-access-time m-r-10"></i><%= pimp.created_at %><%= link_to 'Destroy', pimp, method: :delete, data: { confirm: 'Are you sure?' }, class: 'right' %></small></p>
               </div>
             </div>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
