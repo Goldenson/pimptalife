@@ -19,7 +19,7 @@
   <div class="row">
     <div class="input-field col s12 m6 offset-m3">
       <%= f.label :image %>
-      <%= f.attachment_field :image %>
+      <%= f.attachment_field :image, direct: true, presigned: true %>
     </div>
   </div>
   <div class="row">
