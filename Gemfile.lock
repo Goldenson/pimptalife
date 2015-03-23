@@ -40,6 +40,11 @@ GEM
       activerecord (>= 3.2, <= 4.3)
       rake (~> 10.4)
     arel (6.0.0)
+    aws-sdk (1.56.0)
+      aws-sdk-v1 (= 1.56.0)
+    aws-sdk-v1 (1.56.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -125,6 +130,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -186,6 +196,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  aws-sdk (< 2)
   better_errors
   binding_of_caller
   byebug
@@ -199,6 +210,7 @@ DEPENDENCIES
   mini_magick
   pg
   rails (= 4.2.0)
+  rails_12factor
   refile
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
