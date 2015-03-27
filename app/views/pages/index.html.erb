@@ -27,7 +27,7 @@
                 <% end %>
               </div>
               <div class="card-content">
-                <span class="card-title grey-text text-darken-4"><%= pimp.name %></span>
+                <span class="card-title grey-text text-darken-4"><%= pimp.name %><i class="right" id="pimp_<%= pimp.id %>_likes"><%= render partial: "pimps/likes", locals: {pimp: pimp}%></i></span>
                 <!-- <span class="card-title grey-text text-darken-4"><i class="fa fa-heart-o right"> 3</i></span> -->
                 <p><i class="mdi-image-timer-auto"></i><%= pimp.user.name %></p>
                   <p><small><i class="mdi-device-access-time m-r-10"></i><%= local_time_ago(pimp.created_at) %><% if current_user == pimp.user %><%= link_to 'Destroy', pimp, method: :delete, data: { confirm: 'Are you sure?' }, class: 'right' %><% end %></small></p>

@@ -1,0 +1,2 @@
+// =j escape the javascript response, you can put on the string safely
+$("#pimp_<%= @pimp.id %>_likes").html("<%=j render partial: "pimps/likes", locals: {pimp: @pimp} %>")

@@ -10,10 +10,11 @@
 			</p>
             <% if current_user == @pimp.user %>
 				<%= link_to 'Edit', edit_pimp_path(@pimp) %> |
-				<%= link_to 'Back', pimps_path %>
-			<% else %>
-				<%= link_to 'Back', pimps_path %>
-			<% end %>	
+			<% end %>
+			<%= link_to 'Back', pimps_path %>
+			<div id="pimp_<%= @pimp.id %>_likes">
+				<%= render partial: "likes", locals: {pimp: @pimp} %>
+			</div>
 		</div>
 	</div>
 </div>

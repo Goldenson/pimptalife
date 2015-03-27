@@ -1,0 +1,13 @@
+<% if user_signed_in? && current_user.likes?(pimp)%>	
+	<%= link_to pimp_like_path(pimp), method: :delete, remote: true  do %>
+		<i class="fa fa-heart"></i> <%= pimp.likes.count %>
+	<% end %>
+<% else %>
+	<%= link_to pimp_like_path(pimp), method: :post, remote: true  do %>
+		<i class="fa fa-heart-o"></i> <%= pimp.likes.count if pimp.likes.count > 0 %>
+	<% end %>
+<% end %>
+
+<!-- < pimp.likes.each do |like| %>
+	<= image_tag like.user.avatar_url, width: 20 %>
+< end %> -->
