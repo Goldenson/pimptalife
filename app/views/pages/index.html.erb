@@ -23,7 +23,7 @@
             <div class="card z-depth-4">
               <div class="card-image waves-effect waves-block waves-light">
                 <%= link_to pimp do %>
-                  <%= image_tag attachment_url(pimp, :image, :fill, 300, 200) %>
+                  <%= attachment_image_tag(pimp, :image, :fill, 300, 200) %>
                 <% end %>
               </div>
               <div class="card-content">
