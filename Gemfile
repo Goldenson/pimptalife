@@ -65,5 +65,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'annotate'
   gem 'dotenv-rails'
+  gem 'quiet_assets'
 end
 
