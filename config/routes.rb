@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resource :like, module: :pimps
   end
 
-  devise_for :users, :controllers => { registrations: 'registrations' }
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
+
 
   root 'pages#index'
 

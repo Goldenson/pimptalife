@@ -8,7 +8,10 @@
 			  	<li><%= link_to current_user.name, edit_user_registration_path %></li>
 			    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 			    <li><%= link_to 'MyPimps', pimps_path %></li>
-		  	<% else %>		    
+		  	<% else %>
+		  		<li><%= link_to user_omniauth_authorize_path(:facebook) do %>
+		  		<i class="fa fa-facebook-square left"></i>Login<% end %>
+		  		</li>		    
 		  		<li><%= link_to 'Sign Up', new_user_registration_path %></li>
 			    <li><%= link_to 'Login', new_user_session_path %></li>
 		  	<% end %>
@@ -19,8 +22,11 @@
 			    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
 			    <li><%= link_to 'MyPimps', pimps_path %></li>
 		  	<% else %>
-			  	<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+		  		<li><%= link_to 'Sign Up', new_user_registration_path %></li>
 			    <li><%= link_to 'Login', new_user_session_path %></li>
+		  		<li><%= link_to user_omniauth_authorize_path(:facebook) do %>
+		  		<i class="fa fa-facebook-square left"></i>Login<% end %>
+		  		</li>
 		  	<% end %>
 		  </ul>
 		</div>

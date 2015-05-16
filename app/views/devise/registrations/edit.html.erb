@@ -18,6 +18,8 @@
       <!-- < if devise_mapping.confirmable? && resource.pending_reconfirmation? %> -->
         <!-- <div>Currently waiting confirmation for: <=resource.unconfirmed_email %></div> -->
       <!-- < end %> -->
+
+      <!-- Display password only for people who signin in -->
       <div class="row">
         <div class="input-field col s12 m6 offset-m3">
           <%= f.label :password %>
@@ -29,17 +31,13 @@
       </div>
       <div class="row">
         <div class="input-field col s12 m6 offset-m3">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12 m6 offset-m3">
           <%= f.label :current_password %>
           <!-- <i>(we need your current password to confirm your changes)</i><br /> -->
           <%= f.password_field :current_password, autocomplete: "off" %>
         </div>
       </div>
+
+
       <div class="row">
         <div class="input-field col s12 m6 offset-m3">
           <%= f.button "Update", class: "waves-effect waves-light btn col s12", data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Updating..."} %>
